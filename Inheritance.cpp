@@ -1,23 +1,34 @@
 #include<iostream>
 using namespace std;
-class sample1
+
+class super
 {
+    protected:
+    int i,j;
     public:
-    void add()
+    void input(int a, int b)
     {
-        int a,b,tot;
-        cout<<"Enter two Numbers: ";
-        cin>>a>>b;
-        tot=a+b;
-        cout<<"Sum of two numbers is: "<<tot;
+        i=a;
+        j=b;
     }
 };
-class sample2:public sample1
+
+class sub: public super
 {
+    public:
+    void display()
+    {
+        cout<<"a="<<i<<endl<<"b="<<j;
+    }
 };
+
 int main()
 {
-    sample2 s2;
-    s2.add();
+    sub s;
+    int a,b;
+    cout<<"Enter two numbers: ";
+    cin>>a>>b;
+    s.input(a,b);
+    s.display();
     return 0;
 }
